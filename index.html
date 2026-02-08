@@ -1,641 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>androidmadad.com</title>
-  <style>
-.post-card{
-  color: white;
+<title>Android Madad - Android Tips & Tricks</title>
+<meta charset="UTF-8">
+<style>
+body{
+font-family: Arial, sans-serif;
+background:#f2f2f2;
+margin:0;
 }
-
-.post-card p{
-  color: #ddd;
+header{
+background:#111;
+color:white;
+padding:20px;
+text-align:center;
+font-size:28px;
 }
-
-.tag{
-  color: black;
-  font-weight: bold;
+.container{
+width:90%;
+margin:auto;
+margin-top:30px;
 }
-
-.main-layout {
-  display: flex;
-  gap: 25px;
-  align-items: flex-start;
+.article{
+background:white;
+padding:15px;
+margin:15px 0;
+border-radius:6px;
+box-shadow:0 0 10px #ccc;
 }
-
-/* LEFT POSTS */
-.posts {
-  flex: 3;
+.article a{
+text-decoration:none;
+color:#0077cc;
+font-size:20px;
+font-weight:bold;
 }
-
-.post-card {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 25px;
-  background: #1f2937;
-  padding: 15px;
-  border-radius: 10px;
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
 }
-
-.post-card img {
-  width: 200px;
-  border-radius: 10px;
-}
-
-.post-card h2 {
-  margin: 5px 0;
-}
-
-.tag {
-  background: white;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-}
-/* RIGHT SIDEBAR */
-.sidebar {
-  flex: 1;
-  background: #1f1f1f;
-  padding: 15px;
-  border-radius: 10px;
-  color: white;
-}
-
-.sidebar li {
-  padding: 8px 0;
-  border-bottom: 1px solid #333;
-  cursor: pointer;
-  color: white;
-}
-        
-.sidebar h3 {
-  color: white;  
-  border-bottom: 2px solid #3b82f6;
-  padding-bottom: 8px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  padding: 8px 0;
-  border-bottom: 1px solid #333;
-  cursor: pointer;
-}
-
-.sidebar li:hover {
-  color: #3b82f6;
-}
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: white;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    h1, h2 {
-      text-align: center;
-      margin: 15px 0;
-    }
-
-    h1 {
-      background: #1f1f1f;
-      padding: 15px;
-      margin: 0;
-    }
-
-    /* Navigation */
-    nav {
-      background: #222;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #3b82f6;
-    }
-
-    /* Container */
-    .container {
-      padding: 15px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    /* Featured Articles - side by side */
-    .articles-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-bottom: 30px;
-    }
-
-    .article-card {
-      background: linear-gradient(135deg, #1f2937, #3b82f6);
-      color: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4);
-      padding: 15px;
-      flex: 1 1 300px;
-      max-width: 480px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: transform 0.3s;
-    }
-
-    .article-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .article-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      object-fit: cover;
-      max-height: 200px;
-    }
-
-    .article-card h3 {
-      margin: 10px 0 8px;
-      text-align: center;
-    }
-
-    .article-card p {
-      flex-grow: 1;
-      text-align: center;
-      font-size: 14px;
-      line-height: 1.4;
-      margin-bottom: 15px;
-    }
-
-    .article-card button {
-      width: 100%;
-      padding: 10px;
-      background: #2563eb;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .article-card button:hover {
-      background: #1e40af;
-    }
-
-    /* Vertical Articles */
-    .articles-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 600px;
-      margin: 0 auto 50px auto;
-    }
-
-    .list-article {
-      background: linear-gradient(135deg, #283618, #606c38);
-      color: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(96, 108, 56, 0.4);
-      padding: 15px;
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      transition: transform 0.3s;
-    }
-
-    .list-article:hover {
-      transform: translateY(-5px);
-    }
-
-    .list-article img {
-      width: 120px;
-      height: 80px;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-
-    .list-article-content {
-      flex: 1;
-    }
-
-    .list-article-content h4 {
-      margin: 0 0 8px;
-    }
-
-    .list-article-content p {
-      margin: 0 0 10px;
-      font-size: 14px;
-      line-height: 1.3;
-    }
-
-    .list-article-content button {
-      background: #606c38;
-      padding: 8px 12px;
-      border-radius: 6px;
-      border: none;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .list-article-content button:hover {
-      background: #283618;
-    }
-
-    /* Footer */
-    footer {
-      background: #1f1f1f;
-      padding: 15px 0;
-      text-align: center;
-      color: #ccc;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #3b82f6;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Toggle button */
-    #toggleBtn {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 8px 15px;
-      background: black;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      z-index: 1000;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    /* Light Mode */
-    body.light {
-      background: #f2f2f2;
-      color: black;
-    }
-
-    body.light h1 {
-      background: black;
-      color: white;
-    }
-
-    body.light nav {
-      background: #333;
-    }
-
-    body.light nav a {
-      color: #ddd;
-    }
-
-    body.light nav a:hover {
-      color: #3b82f6;
-    }
-
-    body.light .article-card {
-      background: linear-gradient(135deg, #a8dadc, #457b9d);
-      color: black;
-      box-shadow: 0 8px 16px rgba(69, 123, 157, 0.4);
-    }
-
-    body.light .article-card button {
-      background: #1d3557;
-      color: white;
-    }
-
-    body.light .article-card button:hover {
-      background: #14213d;
-    }
-
-    body.light .list-article {
-      background: linear-gradient(135deg, #f4a261, #e76f51);
-      color: black;
-      box-shadow: 0 8px 16px rgba(231, 111, 81, 0.4);
-    }
-
-    body.light .list-article-content button {
-      background: #e76f51;
-      color: white;
-    }
-
-    body.light .list-article-content button:hover {
-      background: #b33a1a;
-    }
-
-    body.light footer {
-      background: #222;
-      color: #ccc;
-    }
-
-    body.light #toggleBtn {
-      background: white;
-      color: black;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .articles-row {
-        flex-direction: column;
-        align-items: center;
-      }
-      .article-card, .list-article {
-        max-width: 100%;
-      }
-      .list-article {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .list-article img {
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-      }
-    }
-  </style>
+</style>
 </head>
-<body class="dark">
+<body>
 
-<button id="toggleBtn">☀ Light Mode</button>
-
-<h1>Android Madad</h1>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="disclaimer.html">Disclaimer</a>
-  <a href="terms.html">Terms & Conditions</a>
-  <a href="contact.html">Contact Us</a>
-  <a href="privacy.html">Privacy Policy</a>
-</nav>
+<header>Android Madad - Android Tips & Guides</header>
 
 <div class="container">
-<div class="main-layout">
 
-  <!-- LEFT: Posts -->
-  <div class="posts">
-
-    <!-- Post 1 -->
-    <div class="post-card">
-      <img src="https://via.placeholder.com/300x200" alt="">
-      <div>
-        <span class="tag">Android Basics</span>
-        <h2>Android Phone Hang Problem Ka Permanent Solution</h2>
-        <p>Introduction In the digital atelier of fashion...</p>
-      </div>
-    </div>
-
-    <!-- Post 2 -->
-    <div class="post-card">
-      <img src="https://via.placeholder.com/300x200" alt="">
-      <div>
-        <span class="tag">Internet & Data</span>
-        <h2>Mobile Data Jaldi Khatam Kyun Hota Hai? Solution</h2>
-        <p>The fashion industry is on the cusp...</p>
-      </div>
-    </div>
-
-    <!-- Post 3 -->
-    <div class="post-card">
-      <img src="https://via.placeholder.com/300x200" alt="">
-      <div>
-        <span class="tag"> WhatsApp & Social Media</span>
-        <h2>WhatsApp Status Download Kaise Karein</h2>
-        <p>Introduction In the digital atelier of fashion...</p>
-      </div>
-    </div>
-
-    <!-- Post 4 -->
-    <div class="post-card">
-      <img src="https://via.placeholder.com/300x200" alt="">
-      <div>
-        <span class="tag">Security & Privacy</span>
-        <h2>Android Phone Hack Ho Gaya Hai? Kya Karein</h2>
-        <p>Introduction In the digital atelier of fashion...</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- RIGHT: Sidebar -->
-  <div class="sidebar">
-
-    <h3>Recent Posts</h3>
-    <ul class="recent">
-      <li>Mobile Data Jaldi Khatam Kyun Hota Hai? Solution</li>
-      <li>Android Phone Garam Kyun Hota Hai? Heat Problem Solution</li>
-      <li>Android Me Hidden Apps Kaise Dekhein</li>
-      <li>WhatsApp Storage Full Problem Ka Solution</li>
-    </ul>
-
-    <h3>Categories</h3>
-    <ul class="categories">
-      <li>Intrnet & Data</li>
-      <li>Android Basics</li>
-      <li>WhatsApp & Social Media</li>
-      <li>AI Technology</li>
-    </ul>
-
-  </div>
+<div class="article"><a href="article1.html">How to Save Mobile Data on Android</a></div>
+<div class="article"><a href="article2.html">Android Hidden Codes List</a></div>
+<div class="article"><a href="article3.html">Phone Slow Problem Solution</a></div>
+<div class="article"><a href="article4.html">Best Android Settings You Must Change</a></div>
+<div class="article"><a href="article5.html">Battery Drain Problem Fix</a></div>
+<div class="article"><a href="article6.html">Increase Phone Speed</a></div>
+<div class="article"><a href="article7.html">Free Storage Space Tricks</a></div>
+<div class="article"><a href="article8.html">WiFi Not Connecting Fix</a></div>
+<div class="article"><a href="article9.html">Mobile Heating Problem</a></div>
+<div class="article"><a href="article10.html">Data Saver Mode Guide</a></div>
 
 </div>
 
-  <!-- Featured Articles -->
-  <h2>Featured Articles</h2>
-  <div class="articles-row">
-    <div class="article-card">
-      <img src="https://via.placeholder.com/400x200?text=Android+Tips" alt="Android Tips" />
-      <h3>Android Tips for Beginners</h3>
-      <p>Learn the best tips to improve your Android experience.</p>
-      <button onclick="window.open('https://example.com/article1', '_blank')">Read More</button>
-    </div>
-
-    <div class="article-card">
-      <img src="https://via.placeholder.com/400x200?text=Best+Apps" alt="Best Apps" />
-      <h3>Best Free Android Apps in 2026</h3>
-      <p>Discover the top free Android apps you must try this year.</p>
-      <button onclick="window.open('https://example.com/article2', '_blank')">Read More</button>
-    </div>
-
-    <div class="article-card">
-      <img src="https://via.placeholder.com/400x200?text=New+App" alt="New App" />
-      <h3>New Android App Review</h3>
-      <p>Check out the latest Android app and its features.</p>
-      <button onclick="window.open('https://example.com/article3', '_blank')">Read More</button>
-    </div>
-  </div>
-
-  <!-- More Articles -->
-  <h2>More Articles</h2>
-  <div class="articles-list">
-    <div class="list-article">
-      <img src="https://via.placeholder.com/120x80?text=App+Review" alt="App Review" />
-      <div class="list-article-content">
-        <h4>App Review: Top Productivity Apps</h4>
-        <p>Check out our in-depth review of the best productivity apps on Android.</p>
-        <button onclick="window.open('https://example.com/article4', '_blank')">Read More</button>
-      </div>
-    </div>
-
-    <div class="list-article">
-      <img src="https://via.placeholder.com/120x80?text=Security" alt="Security" />
-      <div class="list-article-content">
-        <h4>Keeping Your Android Secure</h4>
-        <p>Learn tips to keep your Android device safe from malware and hackers.</p>
-        <button onclick="window.open('https://example.com/article5', '_blank')">Read More</button>
-      </div>
-    </div>
-
-    <div class="list-article">
-      <img src="https://via.placeholder.com/120x80?text=Battery" alt="Battery Tips" />
-      <div class="list-article-content">
-        <h4>Battery Saving Tips</h4>
-        <p>Easy tricks to extend your Android phone battery life.</p>
-        <button onclick="window.open('https://example.com/article6', '_blank')">Read More</button>
-      </div>
-    </div>
-
-    <div class="list-article">
-      <img src="https://via.placeholder.com/120x80?text=Updates" alt="Updates" />
-      <div class="list-article-content">
-        <h4>Latest Android Updates</h4>
-        <p>All you need to know about the newest Android software updates.</p>
-        <button onclick="window.open('https://example.com/article7', '_blank')">Read More</button>
-      </div>
-    </div>
-
-    <div class="list-article">
-      <img src="https://via.placeholder.com/120x80?text=Tips" alt="Tips" />
-      <div class="list-article-content">
-        <h4>Hidden Android Tricks</h4>
-        <p>Discover secret tips and tricks to maximize your Android experience.</p>
-        <button onclick="window.open('https://example.com/article8', '_blank')">Read More</button>
-      </div>
-    </div>
-  </div>
-
-</div>
-<div style="text-align:center; margin:20px;">
-  <a href="index.html">1</a>
-  <a href="page2.html">2</a>
-  <a href="page3.html">3</a>
-  <a href="page4.html">4</a>
-  <a href="page5.html">5</a>
-  <a href="page6.html">6</a>
-  <a href="page7.html">7</a>
-  <a href="page8.html">8</a>
-  <a href="page9.html">9</a>
-  <a href="page10.html">10</a>
-  <a href="page11.html">11</a>
-  <a href="page12.html">12</a>
-</div>
 <footer>
-  <a href="index.html">Home</a> |
-  <a href="about.html">About Us</a> |
-  <a href="disclaimer.html">Disclaimer</a> |
-  <a href="terms.html">Terms & Conditions</a>
-  <p style="margin-top:10px;">&copy; 2026 Android Madad. All rights reserved.</p>
+© 2026 Android Madad | All Rights Reserved
 </footer>
-
-<script>
-  const toggleBtn = document.getElementById('toggleBtn');
-  const body = document.body;
-
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('light');
-    body.classList.toggle('dark');
-
-    if (body.classList.contains('light')) {
-      toggleBtn.textContent = '🌙 Dark Mode';
-    } else {
-      toggleBtn.textContent = '☀ Light Mode';
-    }
-  });
-</script>
 
 </body>
 </html>
-<li><a href="article7.html">How to save mobile data on Android</a></li>
-<ul>
-<li><a href="article1.html">Article 1</a></li>
-<li><a href="article2.html">Article 2</a></li>
-<li><a href="article3.html">Article 3</a></li>
-<li><a href="article4.html">Article 4</a></li>
-<li><a href="article5.html">Article 5</a></li>
-<li><a href="article6.html">Article 6</a></li>
-<li><a href="article7.html">Article 7</a></li>
-<li><a href="article8.html">Article 8</a></li>
-<li><a href="article9.html">Article 9</a></li>
-<li><a href="article10.html">Article 10</a></li>
-<li><a href="article11.html">Article 11</a></li>
-<li><a href="article12.html">Article 12</a></li>
-<li><a href="article13.html">Article 13</a></li>
-<li><a href="article14.html">Article 14</a></li>
-<li><a href="article15.html">Article 15</a></li>
-<li><a href="article16.html">Article 16</a></li>
-<li><a href="article17.html">Article 17</a></li>
-<li><a href="article18.html">Article 18</a></li>
-<li><a href="article19.html">Article 19</a></li>
-<li><a href="article20.html">Article 20</a></li>
-<li><a href="article21.html">Article 21</a></li>
-<li><a href="article22.html">Article 22</a></li>
-<li><a href="article23.html">Article 23</a></li>
-<li><a href="article24.html">Article 24</a></li>
-<li><a href="article25.html">Article 25</a></li>
-<li><a href="article26.html">Article 26</a></li>
-<li><a href="article27.html">Article 27</a></li>
-<li><a href="article28.html">Article 28</a></li>
-<li><a href="article29.html">Article 29</a></li>
-<li><a href="article30.html">Article 30</a></li>
-<li><a href="article31.html">Article 31</a></li>
-<li><a href="article32.html">Article 32</a></li>
-<li><a href="article33.html">Article 33</a></li>
-<li><a href="article34.html">Article 34</a></li>
-<li><a href="article35.html">Article 35</a></li>
-<li><a href="article36.html">Article 36</a></li>
-<li><a href="article37.html">Article 37</a></li>
-<li><a href="article38.html">Article 38</a></li>
-<li><a href="article39.html">Article 39</a></li>
-<li><a href="article40.html">Article 40</a></li>
-<li><a href="article41.html">Article 41</a></li>
-<li><a href="article42.html">Article 42</a></li>
-<li><a href="article43.html">Article 43</a></li>
-<li><a href="article44.html">Article 44</a></li>
-<li><a href="article45.html">Article 45</a></li>
-<li><a href="article46.html">Article 46</a></li>
-<li><a href="article47.html">Article 47</a></li>
-<li><a href="article48.html">Article 48</a></li>
-<li><a href="article49.html">Article 49</a></li>
-<li><a href="article50.html">Article 50</a></li>
-<li><a href="article51.html">Article 51</a></li>
-<li><a href="article52.html">Article 52</a></li>
-<li><a href="article53.html">Article 53</a></li>
-<li><a href="article54.html">Article 54</a></li>
-</ul>
-
-
